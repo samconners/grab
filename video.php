@@ -1,0 +1,1 @@
+<object width="425" height="350" data="http://www.youtube.com/v/VGuoiSQ9-xY" type="application/x-shockwave-flash"><param name="src" value="http://www.youtube.com/v/VGuoiSQ9-xY" /></object>

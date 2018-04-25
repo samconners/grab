@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grab</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+        <div id="header">
+
+            <img id="logo" src="./images/logo.png" alt="logo.png">
+
+            <div class="headerContent">
+
+                <a id="videoLink" href="#">Click here for a video demonstration of this website</a>
+
+                <div class="tab" id="loginButton">
+                    <a href="#" class="closeLink">Login</a>
+                </div>
+
+                <div id="regPlaceHolder"></div>
+
+                <p id="logResult"></p>
+
+                <div class="bottomHeader">
+
+                    <div id="insertSpot"></div>
+
+                    <div class="spacer"></div>
+
+                    <div class="tab">
+                        <a href="#" class="searchTab closeLink" data-type="ALL">Community Collections</a>
+                        <div class="dropdown-content">
+                            <a href="#" class="searchTab closeLink" data-type="movies">Movies</a>
+                            <a href="#" class="searchTab closeLink" data-type="books">Books</a>
+                            <a href="#" class="searchTab closeLink" data-type="music">Music</a>
+                            <a href="#" class="searchTab closeLink" data-type="games">Games</a>
+                            <a href="#" class="searchTab closeLink" data-type="OTHER_TYPE">Other</a>
+                        </div>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            $(document).ready(function() {
+                setLoginButton();
+
+            });
+
+            $(document).on("click","#logo",function(){
+                location.reload();
+                return false;
+            });
+
+            $(document).on("click","#videoLink",function(){
+                $('#contentArea').empty();
+                $('#contentArea').append("<iframe id='videoWindow' src='./video.php' frameborder='0' ></iframe>");
+                var width = $(window).width()
+                var height = $(window).height()
+                $('#videoWindow').css({ width : width, height : height });
+                return false;
+            });
+
+            $(document).on("click","#regButton",function(){
+                $('#contentArea').empty();
+                $('#contentArea').append("<iframe id='regwindow' src='./createuser_form.php' frameborder='0' ></iframe>");
+                var width = $(window).width()
+                var height = $(window).height()
+                $('#regwindow').css({ width : width, height : height });
+                return false;
+            });
+
+            $(document).on("click","#loginButton",function(){
+                $('#contentArea').empty();
+                $('#contentArea').append("<iframe id='loginWindow' src='./login_form.php' frameborder='0' ></iframe>");
+                var width = $(window).width()
+                var height = $(window).height()
+                $('#loginWindow').css({ width : width, height : height });
+                return false;
+            });
+
+            $(document).on("click","#logoutButton",function(){
+                xmlhttp=new XMLHttpRequest();
+                xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4) {/* && xmlhttp.status==200) */
+                        console.log(xmlhttp.responseText);
+                    }
+                }
+                xmlhttp.open("GET","http://ec2-54-87-130-71.compute-1.amazonaws.com/logout.php",true);
+                xmlhttp.send();
+                $('#logoutButton').replaceWith('<div class="tab" id="loginButton"><a href="#" class="closeLink">Login</a></div>');
+                location.reload();
+            });
+
+            $(document).on("click","#newCollectionTab",function(){
+                $("#contentArea").empty();
+                $('#contentArea').append("<iframe id='newCollection' src='./new/collection.php' frameborder='0' ></iframe>");
+                return false; //cancel default action
+            });
+
+            $(document).on("click",".searchTab",function(){
+                $("#contentArea").empty();
+                var type = $(this).attr('data-type');
+                $('#contentArea').append("<iframe id='collectionGallery' src='./collections/gallery.php#" + type + "' frameborder='0'></iframe>");
+                return false;
+            });
+
+            function setLoginButton() {
+                if (getCookie("loggedin")) {
+                    var name = getCookie("loggedin");
+                    name = name.replace('+', ' ');
+                    console.log(name + " is logged in");
+
+                    $("#insertSpot").after('<div class="spacer"></div><div class="tab"><a id="newCollectionTab" href="#" class="closeLink">New Collection</a></div><div class="spacer"></div><div class="tab"><a id="myCollectionsTab" href="#" class="searchTab closeLink" data-type="LIST_MINE">My Collections</a></div>');
+
+                    $('#loginButton').replaceWith('<div class="tab" id="logoutButton"><a href="#" class="closeLink">Logout</a></div><p id=welcome></p>');
+                    $('#welcome').text("Welcome " + name + "!");
+                }
+                else {
+                    $('#logoutButton').replaceWith('<div class="tab" id="loginButton"><a href="#" class="closeLink">Login</a></div>');
+                    $('#regPlaceHolder').after('<div class="tab" id="regButton"><a href="#" class="closeLink">Register</a></div>');
+                }
+            }
+
+            function getCookie(name) {
+                var pattern = RegExp(name + "=.[^;]*")
+                matched = document.cookie.match(pattern)
+                if(matched){
+                    var cookie = matched[0].split('=')
+                    return cookie[1]
+                }
+                return false;
+            }
+
+
+
+        </script>
+    </head>
+
+    <body>
+        <div id="contentArea"></div>
+    </body>
+</html>

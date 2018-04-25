@@ -1,0 +1,133 @@
+body {
+    min-width: 980px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.spacer {
+    float: left;
+    background: #555555;
+    background: -webkit-linear-gradient(top, #333333 15%, #727272 50%, #232323 85%);
+    background: linear-gradient(to bottom, #333333 15%,#727272 50%,#232323 85%);
+    height: 30%;
+    width: 1px;
+    min-height: 35px;
+}
+
+.tab a:hover {
+    background: #333;
+    background: -webkit-linear-gradient(bottom, #646464 0%, #0e0e0e 100%);
+    background: linear-gradient(to top, #646464 0%,#0e0e0e 100%);
+}
+
+.headerContent {
+    float: left;
+    width: 84%;
+}
+
+.bottomHeader {
+    position: absolute;
+    bottom: 14px;
+}
+
+.tab {
+    float: left;
+    bottom: 0px;
+    position: relative;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.dropdown-content {
+    /* Hidden by default */
+    display: none;
+    position: absolute;
+    background: #333;
+    background: -webkit-linear-gradient(top, #646464 0%, #0e0e0e 100%);
+    background: linear-gradient(to bottom, #646464 0%,#0e0e0e 100%);
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    margin-top: 10px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.tab:hover .dropdown-content {
+    display: block;
+}
+
+#logo {
+    float: left;
+    height: 80%;
+    clear: both;
+    position: relative;
+    z-index: 100;
+    margin-right: 10px;
+}
+
+#videoLink {
+    clear: both;
+    float: left;
+    width: 396px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(0,0,0,0.3);
+    padding: 5px 8px 0px 8px;
+    font-weight: bold;
+}
+
+#header {
+    background: #333;
+    background: -webkit-linear-gradient(top, #646464 0%, #0e0e0e 100%);
+    background: linear-gradient(to bottom, #646464 0%,#0e0e0e 100%);
+    color: #fff;
+    font: 10pt Verdana, Arial, sans-serif;
+    height: 83px;
+    margin: 15px auto auto -0px;
+    padding: 10px 10px 0 10px;
+    position: relative;
+    z-index: 200;
+/*    max-width: 998px;*/
+    min-width: 630px;
+}
+
+#loginButton, #logoutButton, #regButton {
+    float: right;
+}
+
+#welcome {
+    float: right;
+    bottom: 0px;
+    position: relative;
+    display: inline-block;
+    margin-top: 0px;
+    padding: 8px;
+    background-color: #333;
+}
+
+#contentArea {
+    background-color: grey;
+/*    max-width: 1008px;*/
+    min-width: 630px;
+    height: 475px;
+    border: solid #0e0e0e 5px;
+}
+
+#newCollection, #myCollections, #collectionGallery {
+    width: 100%;
+    height: 100%;
+/*    min-height: 500px;*/
+    height: 475px;
+    margin-bottom: -5px;
+}
+

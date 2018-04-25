@@ -1,0 +1,146 @@
+a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+body, html {
+    margin: 0px;
+    height: 100%;
+    background-color: #0e0e0e;
+}
+
+#focus {
+    vertical-align: top;
+    display: inline-block;
+    max-width: 230px;
+    background-color: #393939;
+    height: 100%;
+    margin-left: -4px;
+    overflow-y: auto;
+}
+
+#wikiContent {
+    vertical-align: top;
+    margin-left: -4px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    background-color: grey;
+    max-width: 588px;
+    overflow-y: auto;
+}
+
+#leftBar {
+    height: 100%;
+    width: 155px;
+    background-color: #0e0e0e;
+    display: inline-table;
+}
+
+.leftTab {
+    background: #333;
+    background: -webkit-linear-gradient(top, #646464 0%, #0e0e0e 100%);
+    background: linear-gradient(to bottom, #646464 0%,#0e0e0e 100%);
+    padding: 5px 10px 10px 0px;
+    width: 134px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.leftTab:hover {
+    background: #333;
+}
+
+.leftTab a {
+    padding: 5px 86px 10px 10px;
+}
+
+.leftTab div {
+    display: inline-block;
+    margin-left: 123px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 5px;
+    border-color: transparent transparent transparent #ffffff;
+}
+
+.labelDiv {
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    background-color: darkgrey;
+    border-radius: 15px;
+    font-weight: bolder;
+}
+
+#collName, #collType, #itemName {
+    text-align: center;
+    border-radius: 15px;
+    width: 98%;
+}
+
+.wikiBox {
+    margin: 10px;
+    padding: 10px;
+    float: left;
+    background-color: darkgrey;
+    border-radius: 15px;
+    font-weight: bolder;
+}
+
+#itemSearchButton {
+    float: right;
+}
+
+#focus .wikiBox {
+    float: right;
+    clear: both;
+    animation: wiggle 0.5s;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   25% { transform: rotate(2deg); }
+   75% { transform: rotate(-2deg);}
+  100% { transform: rotate(0deg); }
+}
+
+.wikiBox p:first-of-type {
+    display: inline;
+    margin: 0px 5px 0px 10px;
+}
+
+.wikiBox .imgg {
+    margin-left: 10px;
+}
+
+.delItem {
+    padding-right: 0px;
+}
+
+.grab {
+    padding: 5px 10px;
+    border-radius: 15px;
+    border-color: #D5AB55 #c93 #c93 #D5AB55;
+    background: #fefcea;
+    background: -webkit-linear-gradient(top, #fefcea 0%, #f3ce00 100%);
+    background: linear-gradient(top, #fefcea 0%,#f3ce00 100%);
+    background-color: #f3ce00;
+    color: darkgoldenrod;
+}
+
+#saveButton, #usedSaveButton {
+    background-color: green;
+    margin: 10px;
+    float: right;
+    border-radius: 15px;
+}
+
+.red {
+    color: red;
+    display: inline;
+}
