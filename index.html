@@ -18,6 +18,8 @@
                     <a href="#" class="closeLink">Login</a>
                 </div>
 
+                
+
                 <div id="regPlaceHolder"></div>
 
                 <p id="logResult"></p>
@@ -51,6 +53,17 @@
 
             $(document).on("click","#logo",function(){
                 location.reload();
+                return false;
+            });
+
+            $(document).on("click","#changePassword",function(){
+                $('#contentArea').empty();
+                $('#contentArea').append("<iframe id='changepasswordwindow' src='./changepassword_form.php' frameborder='0' ></iframe>");
+                var width = $(window).width()
+                var height = $(window).height()
+                $('#changepasswordwindow').css({ width : width, height : height });
+
+                //SQL UPDATE
                 return false;
             });
 
@@ -116,6 +129,7 @@
                     $("#insertSpot").after('<div class="spacer"></div><div class="tab"><a id="newCollectionTab" href="#" class="closeLink">New Collection</a></div><div class="spacer"></div><div class="tab"><a id="myCollectionsTab" href="#" class="searchTab closeLink" data-type="LIST_MINE">My Collections</a></div>');
 
                     $('#loginButton').replaceWith('<div class="tab" id="logoutButton"><a href="#" class="closeLink">Logout</a></div><p id=welcome></p>');
+                    $('#logoutButton').after('<a href="#" id="changePassword">Change Password</a>');
                     $('#welcome').text("Welcome " + name + "!");
                 }
                 else {
@@ -125,11 +139,11 @@
             }
 
             function getCookie(name) {
-                var pattern = RegExp(name + "=.[^;]*")
-                matched = document.cookie.match(pattern)
-                if(matched){
-                    var cookie = matched[0].split('=')
-                    return cookie[1]
+                var pattern = RegExp(name + "=.[^;]*");
+                matched = document.cookie.match(pattern);
+                if(matched) {
+                    var cookie = matched[0].split('=');
+                    return cookie[1];
                 }
                 return false;
             }

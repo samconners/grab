@@ -69,7 +69,10 @@ if ($result->num_rows > 0) {
     if ($action == 'get_collection_set') 
         while($row = $result->fetch_assoc()) {
             $htmlEnc = htmlentities($row[collectionName], ENT_QUOTES); //HTML-safe Encoding
-            echo "<a class='wikiBox' data-owner='" . $row[owner] . "' data-collType='" . $row[collectionType] . "' data-collName='" . $htmlEnc . "' class='pickColl closeLink' href='#'><p class='cozy'>\"" . $row[collectionName] . "\"</p><p class='cozy'>By: " . $row[owner] . "</p><p class='cozy'>(Type: " . $row[collectionType] . ")</p></a><a class='x' href='#'>x</a>";
+            if ($list_mine == "true")
+                echo "<a class='wikiBox' data-owner='" . $row[owner] . "' data-collType='" . $row[collectionType] . "' data-collName='" . $htmlEnc . "' class='pickColl closeLink' href='#'><p class='cozy'>\"" . $row[collectionName] . "\"</p><p class='cozy'>By: " . $row[owner] . "</p><p class='cozy'>(Type: " . $row[collectionType] . ")</p></a><a class='x' href='#'>x</a>";
+            else
+                echo "<a class='wikiBox' data-owner='" . $row[owner] . "' data-collType='" . $row[collectionType] . "' data-collName='" . $htmlEnc . "' class='pickColl closeLink' href='#'><p class='cozy'>\"" . $row[collectionName] . "\"</p><p class='cozy'>By: " . $row[owner] . "</p><p class='cozy'>(Type: " . $row[collectionType] . ")</p></a>";            
         }
     else if ($action == 'get_collection')
         while($row = $result->fetch_assoc()) {
