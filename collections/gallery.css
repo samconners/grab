@@ -109,11 +109,26 @@ body, html {
   100% { transform: rotate(0deg); }
 }
 
-.wikiBox p:first-of-type {
+.wikiBox p:nth-of-type(1) {
     display: inline;
     margin: 0px 5px 0px 10px;
     color: white;
     border-bottom: 2px solid white;
+}
+
+.x {
+    color: firebrick;
+    font-size: 21px;
+    margin-left: -28px;
+    margin-top: 6px;
+    padding: 0;
+    display: inline;
+    position: absolute;
+    font-family: cursive;
+}
+
+.x:hover {
+    color: red;
 }
 
 .cozy {

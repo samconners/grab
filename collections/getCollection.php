@@ -10,9 +10,12 @@ $action = empty($_POST['action']) ? '' : $_POST['action'];
 $owner = empty($_POST['owner']) ? '' : $_POST['owner'];
 $collectionName = empty($_POST['collectionName']) ? '' : $_POST['collectionName'];
 $collectionType = empty($_POST['collectionType']) ? '' : $_POST['collectionType'];
+$list_mine = "";
+
 if ($collectionType == "LIST_MINE") {
     $owner = $_COOKIE['loggedin'];
     $collectionType = "";
+    $list_mine = "true";
 }
 else if ($collectionType == "ALL") {
     $collectionType = "";
@@ -58,8 +61,6 @@ if ($collectionType) {
 if ($collectionName)
     $query .= "collectionName = '" . $collectionName . "'";
 
-//    echo $query;
-
 $result = $conn->query($query);
 
 
@@ -68,7 +69,7 @@ if ($result->num_rows > 0) {
     if ($action == 'get_collection_set') 
         while($row = $result->fetch_assoc()) {
             $htmlEnc = htmlentities($row[collectionName], ENT_QUOTES); //HTML-safe Encoding
-            echo "<a class='wikiBox' data-owner='" . $row[owner] . "' data-collType='" . $row[collectionType] . "' data-collName='" . $htmlEnc . "' class='pickColl closeLink' href='#'><p class='cozy'>\"" . $row[collectionName] . "\"</p><p class='cozy'>By: " . $row[owner] . "</p><p class='cozy'>(Type: " . $row[collectionType] . ")</p></a>";
+            echo "<a class='wikiBox' data-owner='" . $row[owner] . "' data-collType='" . $row[collectionType] . "' data-collName='" . $htmlEnc . "' class='pickColl closeLink' href='#'><p class='cozy'>\"" . $row[collectionName] . "\"</p><p class='cozy'>By: " . $row[owner] . "</p><p class='cozy'>(Type: " . $row[collectionType] . ")</p></a><a class='x' href='#'>x</a>";
         }
     else if ($action == 'get_collection')
         while($row = $result->fetch_assoc()) {

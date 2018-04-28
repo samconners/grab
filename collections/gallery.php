@@ -39,6 +39,16 @@
                 Search("", "", searchType, "get_collection_set");
 
 
+            $(document).on("click",".x",function(){
+                //DO SQL DELETE HERE
+                var collectionName = $(this).prev().attr("data-collName");
+                var collectionType = $(this).prev().attr("data-collType");
+                console.log("Parent: " + collectionName + " " + collectionType);
+                DeleteCollection(collectionName, collectionType);
+                $(this).parent().empty();
+                return false;
+            });
+
             $(document).on("click","#itemSearchButton",function(){
                 $("#wikiContent").empty();
 
@@ -73,6 +83,24 @@
                         if(!data)
                             console.log("NO DATA RECEIVED");
                         $('#wikiContent').append(data);
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        console.log(XMLHttpRequest + textStatus + errorThrown);
+                    }
+                });
+            }
+
+            function DeleteCollection(collectionName, collectionType) {
+                $.ajax ({ 
+                    type: "POST",
+                    url: "delete.php",
+                    data: {
+                        collectionName: collectionName,
+                        collectionType: collectionType,
+                    },
+                    success: function(data){
+                        if(!data)
+                            console.log("NO DATA RECEIVED");
                     },
                     error: function(XMLHttpRequest, textStatus, errorThrown) {
                         console.log(XMLHttpRequest + textStatus + errorThrown);
