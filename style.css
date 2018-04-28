@@ -131,3 +131,12 @@ a {
     margin-bottom: -5px;
 }
 
+#changePassword {
+    float: right;
+    margin-top: -2px;
+}
+
+label.changeLabel {
+    white-space: nowrap;
+    padding-right: 53px;
+}
