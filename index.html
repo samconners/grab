@@ -47,7 +47,6 @@
 
             $(document).ready(function() {
                 setLoginButton();
-
             });
 
             $(document).on("click","#logo",function(){
@@ -85,11 +84,11 @@
             $(document).on("click","#logoutButton",function(){
                 xmlhttp=new XMLHttpRequest();
                 xmlhttp.onreadystatechange=function() {
-                    if (xmlhttp.readyState==4) {/* && xmlhttp.status==200) */
+                    if (xmlhttp.readyState==4) {
                         console.log(xmlhttp.responseText);
                     }
                 }
-                xmlhttp.open("GET","http://ec2-54-87-130-71.compute-1.amazonaws.com/logout.php",true);
+                xmlhttp.open("GET","http://ec2-174-129-181-81.compute-1.amazonaws.com/logout.php",true);
                 xmlhttp.send();
                 $('#logoutButton').replaceWith('<div class="tab" id="loginButton"><a href="#" class="closeLink">Login</a></div>');
                 location.reload();
