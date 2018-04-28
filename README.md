@@ -17,7 +17,7 @@ Samantha Conners (not in class)
 | addDate | datetime | YES |   | NULL |   |
 | changeDate | datetime | YES |   | NULL |   |
 
-###Collections
+### Collections
 
 | Field | Type | Null | Key | Default | Extra |
 |:--:|:--:|:--:|:--:|:--:|:--:|
