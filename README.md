@@ -1,8 +1,11 @@
 # GRAb
+
 A tool to create collections of items.
 
 ## Team Members
+
 Sean Conners
+
 Samantha Conners (not in class)
 
 ## Schema
@@ -48,7 +51,8 @@ $query = "select DISTINCT collectionName, owner, collectionType from collections
 
 ### Update
 
-//update password
+collections/changepassword.php > Line 49
+$query = "UPDATE users SET password='$newPassword', changeDate=now() WHERE username='$username' AND password='$oldPassword'";
 
 ### Delete
 
