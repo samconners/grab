@@ -19,7 +19,7 @@ $query = "insert into users (username, password, addDate, changeDate) values ('$
 
 ### Read
 
-getCollection.php > Line 32
+collections/getCollection.php > Line 32
 $query = "select DISTINCT collectionName, owner, collectionType from collections";
 
 ### Update
@@ -28,7 +28,8 @@ $query = "select DISTINCT collectionName, owner, collectionType from collections
 
 ### Delete
 
-//delete collection
+collections/delete.php > Line 29
+$query = "DELETE FROM collections WHERE owner = '" . $owner . "' AND collectionName = '" . $collectionName . "' AND collectionType = '" . $collectionType . "'";
 
 ## Link
 
