@@ -43,21 +43,25 @@ Samantha Conners (not in class)
 ### Create
 
 createuser.php > Line 55
+
 $query = "insert into users (username, password, addDate, changeDate) values ('$username', '$password', now(), now())";
 
 ### Read
 
 collections/getCollection.php > Line 32
+
 $query = "select DISTINCT collectionName, owner, collectionType from collections";
 
 ### Update
 
 collections/changepassword.php > Line 49
+
 $query = "UPDATE users SET password='$newPassword', changeDate=now() WHERE username='$username' AND password='$oldPassword'";
 
 ### Delete
 
 collections/delete.php > Line 29
+
 $query = "DELETE FROM collections WHERE owner = '" . $owner . "' AND collectionName = '" . $collectionName . "' AND collectionType = '" . $collectionType . "'";
 
 ## Video
