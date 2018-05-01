@@ -1,6 +1,6 @@
 # GRAb
 
-A tool to create collections of items.
+A tool to create collections of items. [Site is hosted here](http://ec2-174-129-181-81.compute-1.amazonaws.com).
 
 ## Team Members
 
