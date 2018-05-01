@@ -1,6 +1,6 @@
 # GRAb
 
-A tool to create collections of items.
+A site to create collections of items. [Site hosted at this location](http://ec2-174-129-181-81.compute-1.amazonaws.com).
 
 ## Team Members
 
@@ -66,4 +66,4 @@ $query = "DELETE FROM collections WHERE owner = '" . $owner . "' AND collectionN
 
 ## Video
 
-https://www.youtube.com/watch?v=VGuoiSQ9-xY
+https://www.youtube.com/watch?v=sXNwCE4b8SQ
