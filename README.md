@@ -66,4 +66,4 @@ $query = "DELETE FROM collections WHERE owner = '" . $owner . "' AND collectionN
 
 ## Video
 
-https://www.youtube.com/watch?v=VGuoiSQ9-xY
+https://youtu.be/sXNwCE4b8SQ
