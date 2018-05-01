@@ -36,6 +36,7 @@ Samantha Conners (not in class)
 
 ## Entity Relationship Diagram
 
+![ERD](GRAb.png?raw=true "ERD")
 
 ## Criteria
 
